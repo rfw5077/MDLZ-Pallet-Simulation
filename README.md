@@ -21,3 +21,14 @@ This project was built entirely in the Python programming language. Below are th
 
 **Reproducibility:**
 * random 3.12.1 - docs: https://docs.python.org/3/library/random.html
+
+## Data
+All input data for the production model was sourced from the project sponsor. Historical data was used to provide estimates for 2024 throughput. This data can be found in the file below:
+
+Pallet Simulation Data.xlsx
+* Directional yearly pallet throughput for each node in the simulation
+* Lead times between nodes in the network
+* Holding times due to processing, customs, etc. at each node
+* Costs associated with each leg of the pallet return process
+* Pallet damage/loss rates by turn
+* Truck fill capacity
