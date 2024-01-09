@@ -61,6 +61,9 @@ Downstream facilities represent sites that will accept pallets from upstream fac
 * DSD customers - *one node for all customers*
 * Club customers - *one node for all customers*
 
+
+<img src = "MSC Network Future State.PNG">
+
 **Process:**
 The technical details of the discrete event simulation will be detailed in another section. The process of the simulation is as follows:
 
