@@ -78,15 +78,28 @@ As the simulation continues to run, pallet surplus starts to build in the DSD br
 The simulation runs out 3 years, and tracks daily information for each upstream node including pallet counts, pallet needs and pallet returns.
 
 
-**Technical Details:**
-Though this model is flexible, the following parameters have been set in the production model:
-* New pallets can turn through the network a maximum of 3 times before being destroyed
-* The only sites that will receive pallets in the return program are the US Plants - Richmond, Portland, Chicago & Naperville. All other upstream faciilites will continuously source pallet need directly from suppliers.
-* Lead times & Holding times are stochastic between specific boundaries - detailed below.
-* Pallet Return costs are fixed - detailed below.
-* Pallet loss rate is fixed at 6%
-* Pallet damage rate is exponentially distributed by turn, starting at 4%
-* Pallet injection costs are fixed - detailed below.
+## Simulation Technical Details
+The SimPy framework has many nuances not detailed in this section. Please reference the docs above for clarification.
+
+The pallet simulation uses five main features of the SimPy framework: Environmnets, Classes, Processes, Resources & Containers.
+
+*Environmnets*
+* A SimPy environment is a latent control mechanism in which the entire simulation runs. The environment tracks everything related to the simulation including processes, resources and containers. It also controls how processes are triggered and executed over time.
+
+*Classes*
+* Classes are used to define entities within the simulation. In this case, our defined classes represent upstream nodes. These are true python classes. As such, they contain attributes and functions that help the situation run.
+
+*Processes*
+* Processes are python functions that are executed throughout the simulation. These functions are the executables that move pallets from node to node. This includes all movements related to outbound pallets and inbound return pallets.
+
+*Resources*
+* Resources are variables defined within our classes that allow the simulation to interact with the class' attributes. Once a resource is requested, processes run to give or take pallets out of a respective node's class based on the processes that are defined.
+
+*Containers*
+* Containers are an attribute of the upstream nodes. These are latent buckets that hold a specific amount of pallets. These are the buckets that pallets are taken out of and put into as the simulation runs and processes interact with the environment.
+
+**Process:**
+
 
 ## Data
 All input data for the production model was sourced from the project sponsor. Historical data was used to provide estimates for 2024 throughput. This data can be found in the file below:
