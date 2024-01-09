@@ -23,7 +23,7 @@ This project was built entirely in the Python programming language. Below are th
 * random 3.12.1 - docs: https://docs.python.org/3/library/random.html
 
 ## Simulation Overview
-The pallet simulation model uses the SimPy discrete event simulation framework to simulate pallet flow through the NA MSC network. In our current state, we use a combination of generic whitewood pallets and CHEP pallets to supply our NA MSC network. The logistics operations team are investing new, more stable white wood pallets to replace the current flow of generic white wood pallets throughout the network. These new pallets have the ability to be recycled through the network between 3-5 times, giving Mondelez the opportunity to return them throughout the network in lieu of continuously sourcing new pallets from suppliers. This simulation serves as the guide for injecting these new pallets into the network and following them through the pallet return program.
+The pallet simulation model uses the SimPy discrete event simulation framework to simulate pallet flow through the NA MSC network. In our current state, we use a combination of generic whitewood pallets and CHEP pallets to supply our NA MSC network. The logistics operations team are investing new, more stable white wood pallets to replace the current flow of generic white wood pallets throughout the network. These new pallets have the ability to be recycled through the network between 3-5 times, giving Mondelez the opportunity to return them throughout the network in lieu of continuously sourcing new pallets from suppliers. This simulation serves as the guide for injecting these new pallets into the network and following them through the pallet return program over time.
 
 The insights gleaned from this simulation include:
 * Where, when and how many pallets will need to be sourced from suppliers in order to meet pallet demand.
@@ -67,7 +67,15 @@ Downstream facilities represent sites that will accept pallets from upstream fac
 <img src = "MSC Network Future State.PNG">
 
 **Process:**
-The technical details of the discrete event simulation will be detailed in another section. The process of the simulation is as follows:
+Below is the general flow of how the simulation works:
+
+Initially, each of the upstream nodes are injected with pallets. Since the simulation runs on a weekly basis, this means each upstream node holds a weeks worth of outbound pallet demand when the simulation begins.
+
+Every week, the simulation sends out a weeks worth of pallet demand out of upstream nodes and transfers them to downstream nodes (i.e from Mexico to RDCs). Downstream nodes then send pallets to other downstream nodes (i.e from RDCs to DSD branches). All of these pallet movements happen concurrently as the simulation continues to run, week by week.
+
+As the simulation continues to run, pallet surplus starts to build in the DSD branch locations. At weekly intervals, the simulation checks to see if there is any pallet surplus that can be returned to upstream nodes (US Plants). This surplus is then distributed to upstream nodes and returned via the pallet return program. Upstream nodes ONLY buy new pallets from suppliers every week if the pallet return program can't cover their weekly outbound pallet demand.
+
+The simulation runs out 3 years, and tracks daily information for each upstream node including pallet counts, pallet needs and pallet returns.
 
 
 **Technical Details:**
