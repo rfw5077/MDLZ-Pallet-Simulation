@@ -28,7 +28,7 @@ The pallet simulation model uses the SimPy discrete event simulation framework t
 **Nodes:**
 The nodes in this simulation are split into two categories: Upstream and Downstream.
 
-*Upstream*
+*Upstream* <br>
 Upstream facilities represent sites that will be the source of both pallet injection and pallet return. These sites include bakeries, external manufacturers & repack facilities.
 
 * US Plants - US bakeries
@@ -44,7 +44,7 @@ Upstream facilities represent sites that will be the source of both pallet injec
 
 * Repack Facilites
 
-*Downstream*
+*Downstream* <br>
 Downstream facilities represent sites that will accept pallets from upstream facilities and/or distrubte pallets throughout the network. These sites include RDCs, DSD branch locations & customer locations. 
 
 * US DSD Branches - *one node for all branches*
