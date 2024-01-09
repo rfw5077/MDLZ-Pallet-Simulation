@@ -59,6 +59,7 @@ Downstream facilities represent sites that will accept pallets from upstream fac
 * US DSD Branches - *one node for all branches*
 * US RDCs - *one node for all RDCs*
 * DSD customers - *one node for all customers*
+* Customers (non-DSD) - *one node for all customers*
 * Club customers - *one node for all customers*
 
 
