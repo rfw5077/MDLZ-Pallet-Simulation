@@ -62,6 +62,7 @@ Downstream facilities represent sites that will accept pallets from upstream fac
 * Club customers - *one node for all customers*
 
 
+*Depiction of directional pallet flow in pallet simulation*
 <img src = "MSC Network Future State.PNG">
 
 **Process:**
