@@ -66,7 +66,7 @@ Downstream facilities represent sites that will accept pallets from upstream fac
 *Depiction of directional pallet flow in pallet simulation*
 <img src = "MSC Network Future State.PNG">
 
-**Process:**
+**Process:** <br>
 Below is the general flow of how the simulation works:
 
 Initially, each of the upstream nodes are injected with pallets. Since the simulation runs on a weekly basis, this means each upstream node holds a weeks worth of outbound pallet demand when the simulation begins.
