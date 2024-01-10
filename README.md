@@ -109,27 +109,27 @@ A *get* method takes a specified number of pallets out of a container, while a *
 To start, all upstream nodes are initialized with a week's worth of pallet demand. When the simulation starts, all upstream nodes start to send pallets out to downstream nodes through the following functions:
 
 **US Plants** <br>
-*richmond_to_dsd* - Process that sends pallets directly from Richmond bakery to dsd locations
+*richmond_to_dsd* - Process that sends pallets directly from Richmond bakery to dsd locations <br>
 *richmond_to_rdc* - Process that sends pallets from Richmond bakery to RDC locations
 
-*portland_to_dsd* - Process that sends pallets directly from Portland bakery to dsd locations
+*portland_to_dsd* - Process that sends pallets directly from Portland bakery to dsd locations <br>
 *portland_to_rdc* - Process that sends pallets from Portland bakery to RDC locations
 
-*chicago_to_dsd* - Process that sends pallets directly from Chicago bakery to dsd locations
+*chicago_to_dsd* - Process that sends pallets directly from Chicago bakery to dsd locations <br>
 *chicago_to_rdc* - Process that sends pallets from Chicago bakery to RDC locations
 
 *naperville_to_rdc* - Process that sends pallets from Naperville bakery to RDC locations
 
 **Mexico** <br>
-*mexico_to_dsd* - Process that sends pallets directly from Mexico to DSD locations
-*mexico_to_rdc* - Process that sends pallets from Mexico to RDC locations
+*mexico_to_dsd* - Process that sends pallets directly from Mexico to DSD locations <br>
+*mexico_to_rdc* - Process that sends pallets from Mexico to RDC locations <br>
 *mexico_to_customers* - Process that sends pallets directly from Mexico to non DSD customer locations
 
 **External Manufacturers (EMs)** <br>
 *em_to_rdc* - Process that sends pallets from EMs to RDC locations
 
 **Repack** <br>
-*repack_to_dsd* - Process that sends pallets directly from Repack to DSD locations
+*repack_to_dsd* - Process that sends pallets directly from Repack to DSD locations <br>
 *repack_to_customers* - Process that sends pallets directly from Repack to non DSD customer locations
 
 All of these processes run concurrently every 7 days, moving pallets in and out of nodes in the network as they flow from upstream nodes to downstream nodes. Throughout this process, pallets are tracked based on which recycled turn they are on, accounting for damage and pallet loss parameters that are set in the simulation.
@@ -143,9 +143,9 @@ These return processes are run every 7 days, offset from outbound processes by 4
   * US Plants are the only upstream nodes participating in the pallet exchange program. Any and all pallets that are eligible to return will be sent to these upstream nodes only.
 
 There is one return process for each US Plant's upstream node: <br>
-*dsd_return_richmond* - Process that returns excess pallets in DSD locations back to Richmond Bakery
-*dsd_return_portland* - Process that returns excess pallets in DSD locations back to Portland Bakery
-*dsd_return_chicago* - Process that returns excess pallets in DSD locations back to Chicago Bakery
+*dsd_return_richmond* - Process that returns excess pallets in DSD locations back to Richmond Bakery <br>
+*dsd_return_portland* - Process that returns excess pallets in DSD locations back to Portland Bakery <br>
+*dsd_return_chicago* - Process that returns excess pallets in DSD locations back to Chicago Bakery <br>
 *dsd_return_naperville* - Process that returns excess pallets in DSD locations back to Naperville Bakery
 
 ## Data
