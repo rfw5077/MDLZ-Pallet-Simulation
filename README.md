@@ -81,7 +81,7 @@ The simulation runs out 3 years, and tracks daily information for each upstream 
 ## Simulation Technical Details
 The SimPy framework has many nuances not detailed in this section. Please reference the docs above for clarification.
 
-The pallet simulation uses five main features of the SimPy framework: Environmnets, Classes, Processes, Resources & Containers.
+The pallet simulation uses six main features of the SimPy framework: Environmnets, Classes, Processes, Resources, Containers * Timeouts.
 
 *Environmnets*
 * A SimPy environment is a latent control mechanism in which the entire simulation runs. The environment tracks everything related to the simulation including processes, resources and containers. It also controls how processes are triggered and executed over time.
@@ -98,8 +98,55 @@ The pallet simulation uses five main features of the SimPy framework: Environmne
 *Containers*
 * Containers are an attribute of the upstream nodes. These are latent buckets that hold a specific amount of pallets. These are the buckets that pallets are taken out of and put into as the simulation runs and processes interact with the environment.
 
-**Process:**
+*Timeouts*
+* Timeouts are python generator functions that delay the simulation for a specified period of time. In the pallet simulation model, we use timeouts to simulate pallet in transit times, holding times etc. Timeouts DO NOT stop the entire simulation from running, but they hault the process in which they are defined for the specified period of time.
 
+**Process:**
+The SimPy framework uses two methods to move pallets throughout the network via interacting with the upstream node's container objects. These methods are *put* and *get*.
+
+A *get* method takes a specified number of pallets out of a container, while a *put* method puts a specified amount of pallets into a container.
+
+To start, all upstream nodes are initialized with a week's worth of pallet demand. When the simulation starts, all upstream nodes start to send pallets out to downstream nodes through the following functions:
+
+**US Plants**
+*richmond_to_dsd* - Process that sends pallets directly from Richmond bakery to dsd locations
+*richmond_to_rdc* - Process that sends pallets from Richmond bakery to RDC locations
+
+*portland_to_dsd* - Process that sends pallets directly from Portland bakery to dsd locations
+*portland_to_rdc* - Process that sends pallets from Portland bakery to RDC locations
+
+*chicago_to_dsd* - Process that sends pallets directly from Chicago bakery to dsd locations
+*chicago_to_rdc* - Process that sends pallets from Chicago bakery to RDC locations
+
+*naperville_to_rdc* - Process that sends pallets from Naperville bakery to RDC locations
+
+**Mexico**
+*mexico_to_dsd* - Process that sends pallets directly from Mexico to DSD locations
+*mexico_to_rdc* - Process that sends pallets from Mexico to RDC locations
+*mexico_to_customers* - Process that sends pallets directly from Mexico to non DSD customer locations
+
+**External Manufacturers (EMs)**
+*em_to_rdc* - Process that sends pallets from EMs to RDC locations
+
+**Repack**
+*repack_to_dsd* - Process that sends pallets directly from Repack to DSD locations
+*repack_to_customers* - Process that sends pallets directly from Repack to non DSD customer locations
+
+All of these processes run concurrently every 7 days, moving pallets in and out of nodes in the network as they flow from upstream nodes to downstream nodes. Throughout this process, pallets are tracked based on which recycled turn they are on, accounting for damage and pallet loss parameters that are set in the simulation.
+
+Within these processes is logic that tracks pallet need at each location and determines whether or not weekly pallet demand can be covered by the pallet return process or if the location must source pallets from a supplier to cover their demand. 
+
+These return processes are run every 7 days, offset from outbound processes by 4 days (i.e if the outbound processes run on day 21, return processes are run on day 25). The return process check the pallets avaialable to return buckets to see how much of each location's pallet need can be covered through the pallet return process.
+* **IMPORTANT NOTE:** This specific model has been tuned with the following parameters
+  * Mexico will ALWAYS source their weekly demand from suppliers. These pallets will eventually become part of the pallet return program for US Plant's use.
+  * Pallets that are sent from EMs & Repack are NOT eligible for the pallet return program
+  * US Plants are the only upstream nodes participating in the pallet exchange program. Any and all pallets that are eligible to return will be sent to these upstream nodes only.
+
+There is one return process for each US Plant's upstream node:
+*dsd_return_richmond* - Process that returns excess pallets in DSD locations back to Richmond Bakery
+*dsd_return_portland* - Process that returns excess pallets in DSD locations back to Portland Bakery
+*dsd_return_chicago* - Process that returns excess pallets in DSD locations back to Chicago Bakery
+*dsd_return_naperville* - Process that returns excess pallets in DSD locations back to Naperville Bakery
 
 ## Data
 All input data for the production model was sourced from the project sponsor. Historical data was used to provide estimates for 2024 throughput. This data can be found in the file below:
