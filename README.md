@@ -208,10 +208,10 @@ The simulation has many flexible parameters that can be adjusted before being ru
 
 Once all parameters are set, the simulation setup and run is simple:
 
-Step 1) define the environment in which the simulation will run
-Step 2) instantiate upstream node classes with desired parameters
-Step 3) set number of turns each pallet can be recycled through the network
-Step 4) process outbound and return functions every 7 days for desired time period
+Step 1) define the environment in which the simulation will run <br>
+Step 2) instantiate upstream node classes with desired parameters <br>
+Step 3) set number of turns each pallet can be recycled through the network <br>
+Step 4) process outbound and return functions every 7 days for desired time period <br>
 Step 5) run the simulation
 
 
