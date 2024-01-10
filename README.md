@@ -203,6 +203,17 @@ The simulation has many flexible parameters that can be adjusted before being ru
 * BLOCK_US_COST - Dollar value for sourcing a single brand new block white wood pallet in the US (default = $22)
 * BLOCK_MEXICO_COST - Dollar value for sourcing a single brand new block white wood pallet in Mexico (default = $19)
 
+*Pallet recyclibility*
+* turns - Number of times a single block white wood pallet is able to turn through the network before being destroyed (default = 3)
+
+Once all parameters are set, the simulation setup and run is simple:
+
+Step 1) define the environment in which the simulation will run
+Step 2) instantiate upstream node classes with desired parameters
+Step 3) set number of turns each pallet can be recycled through the network
+Step 4) process outbound and return functions every 7 days for desired time period
+Step 5) run the simulation
+
 
 ## Data
 All input data for the production model was sourced from the project sponsor. Historical data was used to provide estimates for 2024 throughput. This data can be found in the file below:
