@@ -148,6 +148,62 @@ There is one return process for each US Plant's upstream node: <br>
 *dsd_return_chicago* - Process that returns excess pallets in DSD locations back to Chicago Bakery <br>
 *dsd_return_naperville* - Process that returns excess pallets in DSD locations back to Naperville Bakery
 
+**Running the simulation:**
+The simulation has many flexible parameters that can be adjusted before being run. These parameters are as follows:
+
+*classes*
+* initial_pallets - The number of pallets each location starts with before the simulation begins (default = 1 week of pallet demand)
+
+*pallet throughput*
+* X_PALLETS - Set the number of yearly pallet demand for any location (i.e RICHMOND_PALLETS = 200)
+
+*lead times*
+* PLANTS_TO_RDC - Time it takes for pallets to move from US Plants to the RDCs in days (default = random between [5,7])
+* PLANTS_TO_DSD - Time it takes for pallets to move from US Plants to the DSD branches in days (default = random between [5,7])
+
+* SALINAS_TO_RDC - Time it takes for pallets to move from Mexico to the RDCs in days (default = random between [10,14])
+* SALINAS_TO_DSD - Time it takes for pallets to move from Mexico to the DSD branches in days (default = random between [10,14])
+* SALINAS_TO_CUSTOMERS - Time it takes for pallets to move from Mexico directly to non DSD customers in days (default = random between [10,14])
+
+* RDC_TO_DSD - Time it takes for pallet to move from RDCs to DSD branches in days (default = random between [4,5])
+* RDC_TO_CUSTOMER - Time it takes for pallet to move from RDCs to non DSD customers in days (default = random between [2,4])
+
+* DSD_TO_CUSTOMER - Time it takes for pallets to move from DSD branches to DSD customers in days (default = 2)
+
+* REPACK_TO_DSD - Time it takes for pallets to move from Repack to DSD branches in days (default = random between [5,7])
+* REPACK_TO_CUSTOMERS - Time it takes for pallets to move from Repack to non DSD customers in days (default = random between [5,7])
+
+* END_TO_PLANT - Time it takes to return pallets from DSD branches to upstream US Plants in days (default = random between [10,14]
+
+*holding times*
+* PLANTS_HOLDING_TIME - Time pallets sit before they can be moved out of US Plants in days (default = random between [7,8])
+
+* RDC_HOLDING_TIME - Time pallets sit before they can be moved out of RDCs in days (default = random between [14,28])
+
+* DSD_HOLDING_TIME - Time pallets sit before they can be moved out of DSD branches in days (default = random between [7,10])
+
+*Distribution Percentages*
+* RDC_TO_DSD_DIST - Percentage of RDCs weekly demand requested from DSD branches (default = 0.54)
+* RDC_TO_CUSTOMER DIST - Percentage of RDCs weekly demand requested from non DSD customers (default = 0.38)
+* RDC_TO_REPACK DIST - Percentage of RDCs weekly demand requested from Repack (default = 0.08)
+
+*Pallet loss and damage*
+* PALLET_LOSS_RATE - fixed percentage of each batch of pallets lost for all turns (default = 0.06)
+
+* PALLET_DAMAGE_RATE_T1 = percentage of each batch of turn one (new) pallets lost due to damage (default = 0.04)
+* PALLET_DAMAGE_RATE_T2 = percentage of each batch of turn two pallets lost due to damage (default = 0.08)
+* PALLET_DAMAGE_RATE_T3 = percentage of each batch of turn three pallets lost due to damage (default = 0.16)
+* PALLET_DAMAGE_RATE_T4 = percentage of each batch of turn four pallets lost due to damage (default = 0.32)
+* PALLET_DAMAGE_RATE_T5 = percentage of each batch of turn five pallets lost due to damage (default = 0.64)
+
+*Costs*
+* RETURN_TO_PLANTS_COST - Dollar value for one full truckload of pallets to be returned from DSD locations back to US Plants (default = $2100)
+
+* STRINGER_COST - Dollar value for sourcing a single brand new stringer pallet (default = $7)
+* BLOCK_US_COST - Dollar value for sourcing a single brand new block white wood pallet in the US (default = $22)
+* BLOCK_MEXICO_COST - Dollar value for sourcing a single brand new block white wood pallet in Mexico (default = $19)
+
+
 ## Data
 All input data for the production model was sourced from the project sponsor. Historical data was used to provide estimates for 2024 throughput. This data can be found in the file below:
 
