@@ -108,7 +108,7 @@ A *get* method takes a specified number of pallets out of a container, while a *
 
 To start, all upstream nodes are initialized with a week's worth of pallet demand. When the simulation starts, all upstream nodes start to send pallets out to downstream nodes through the following functions:
 
-**US Plants**
+**US Plants** <br>
 *richmond_to_dsd* - Process that sends pallets directly from Richmond bakery to dsd locations
 *richmond_to_rdc* - Process that sends pallets from Richmond bakery to RDC locations
 
@@ -120,15 +120,15 @@ To start, all upstream nodes are initialized with a week's worth of pallet deman
 
 *naperville_to_rdc* - Process that sends pallets from Naperville bakery to RDC locations
 
-**Mexico**
+**Mexico** <br>
 *mexico_to_dsd* - Process that sends pallets directly from Mexico to DSD locations
 *mexico_to_rdc* - Process that sends pallets from Mexico to RDC locations
 *mexico_to_customers* - Process that sends pallets directly from Mexico to non DSD customer locations
 
-**External Manufacturers (EMs)**
+**External Manufacturers (EMs)** <br>
 *em_to_rdc* - Process that sends pallets from EMs to RDC locations
 
-**Repack**
+**Repack** <br>
 *repack_to_dsd* - Process that sends pallets directly from Repack to DSD locations
 *repack_to_customers* - Process that sends pallets directly from Repack to non DSD customer locations
 
@@ -142,7 +142,7 @@ These return processes are run every 7 days, offset from outbound processes by 4
   * Pallets that are sent from EMs & Repack are NOT eligible for the pallet return program
   * US Plants are the only upstream nodes participating in the pallet exchange program. Any and all pallets that are eligible to return will be sent to these upstream nodes only.
 
-There is one return process for each US Plant's upstream node:
+There is one return process for each US Plant's upstream node: <br>
 *dsd_return_richmond* - Process that returns excess pallets in DSD locations back to Richmond Bakery
 *dsd_return_portland* - Process that returns excess pallets in DSD locations back to Portland Bakery
 *dsd_return_chicago* - Process that returns excess pallets in DSD locations back to Chicago Bakery
