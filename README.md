@@ -148,7 +148,7 @@ There is one return process for each US Plant's upstream node: <br>
 *dsd_return_chicago* - Process that returns excess pallets in DSD locations back to Chicago Bakery <br>
 *dsd_return_naperville* - Process that returns excess pallets in DSD locations back to Naperville Bakery
 
-**Running the simulation:**
+**Running the simulation:** <br>
 The simulation has many flexible parameters that can be adjusted before being run. These parameters are as follows:
 
 *classes*
