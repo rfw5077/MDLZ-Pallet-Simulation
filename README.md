@@ -151,13 +151,13 @@ There is one return process for each US Plant's upstream node: <br>
 **Running the simulation:** <br>
 The simulation has many flexible parameters that can be adjusted before being run. These parameters are as follows:
 
-*classes*
+*Classes*
 * initial_pallets - The number of pallets each location starts with before the simulation begins (default = 1 week of pallet demand)
 
-*pallet throughput*
+*Pallet throughput*
 * X_PALLETS - Set the number of yearly pallet demand for any location (i.e RICHMOND_PALLETS = 200)
 
-*lead times*
+*Lead times*
 * PLANTS_TO_RDC - Time it takes for pallets to move from US Plants to the RDCs in days (default = random between [5,7])
 * PLANTS_TO_DSD - Time it takes for pallets to move from US Plants to the DSD branches in days (default = random between [5,7])
 
@@ -175,7 +175,7 @@ The simulation has many flexible parameters that can be adjusted before being ru
 
 * END_TO_PLANT - Time it takes to return pallets from DSD branches to upstream US Plants in days (default = random between [10,14]
 
-*holding times*
+*Holding times*
 * PLANTS_HOLDING_TIME - Time pallets sit before they can be moved out of US Plants in days (default = random between [7,8])
 
 * RDC_HOLDING_TIME - Time pallets sit before they can be moved out of RDCs in days (default = random between [14,28])
