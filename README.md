@@ -265,4 +265,10 @@ The main insights gleaned from data visualization are:
 Below are a few examples of the dashboard:
 
 *Pallet injection need by location over time*
+<img src = "Pallet Injection Need.PNG">
 
+*Pallet Injection costs over time*
+<img src = "Injection Costs.PNG">
+
+*Pallet availability by turn over time*
+<img src = "Pallet Availability.PNG">
