@@ -135,7 +135,7 @@ To start, all upstream nodes are initialized with a week's worth of pallet deman
 
 All of these processes run concurrently every 7 days, moving pallets in and out of nodes in the network as they flow from upstream nodes to downstream nodes. Throughout this process, pallets are tracked based on which recycled turn they are on, accounting for damage and pallet loss parameters that are set in the simulation.
 
-Within these processes is logic that tracks pallet need at each location and determines whether or not weekly pallet demand can be covered by the pallet return process or if the location must source pallets from a supplier to cover their demand. 
+Within these processes is logic that tracks pallet need at each location and determines whether weekly pallet demand can be covered by the pallet return process or if the location must source pallets from a supplier to cover their demand. 
 
 These return processes are run every 7 days, offset from outbound processes by 4 days (i.e if the outbound processes run on day 21, return processes are run on day 25). The return process check the pallets avaialable to return buckets to see how much of each location's pallet need can be covered through the pallet return process.
 * **IMPORTANT NOTE:** This specific model has been tuned with the following parameters
