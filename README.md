@@ -250,3 +250,19 @@ All code for this project is written and run in a single jupyter notebook file: 
   * sim_output file - this file has daily pallet level information for the entire length of the simulation and tracks pallet movement throughout.
   * sim_cost file - this file tracks cost of returning pallets back upstream along with all initial pallet buys and buys from supplier.
   * injection file - this file tracks pallet injection necessities at each location over the entire simulation.
+
+
+## Visualizations
+All visualizations were built out in PowerBI using the three output files provided by the simulation model.
+
+The main insights gleaned from data visualization are:
+* Total number of pallets recycled through the pallet return program
+* Pallet injection need by location over time
+* Network pallet surplus at any point in time
+* Costs associated with the pallet return program over time
+* Pallet availability at any point in time
+
+Below are a few examples of the dashboard:
+
+*Pallet injection need by location over time*
+
