@@ -81,7 +81,7 @@ The simulation runs out 3 years, and tracks daily information for each upstream 
 ## Simulation Technical Details
 The SimPy framework has many nuances not detailed in this section. Please reference the docs above for clarification.
 
-The pallet simulation uses six main features of the SimPy framework: Environmnets, Classes, Processes, Resources, Containers * Timeouts.
+The pallet simulation uses six main features of the SimPy framework: Environmnets, Classes, Processes, Resources, Containers & Timeouts.
 
 *Environmnets*
 * A SimPy environment is a latent control mechanism in which the entire simulation runs. The environment tracks everything related to the simulation including processes, resources and containers. It also controls how processes are triggered and executed over time.
