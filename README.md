@@ -229,7 +229,7 @@ Pallet Simulation Data.xlsx
 ## Code Structure
 All code for this project is written and run in a single jupyter notebook file: *pallet_sim_final - Weekly Testing - FINAL.ipynb*
 
-**Code Sections**
+**Sections** <br>
 *Imports*
 * Python package imports necessary for model to run
 
