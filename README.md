@@ -87,7 +87,7 @@ The pallet simulation uses six main features of the SimPy framework: Environmnet
 * A SimPy environment is a latent control mechanism in which the entire simulation runs. The environment tracks everything related to the simulation including processes, resources and containers. It also controls how processes are triggered and executed over time.
 
 *Classes*
-* Classes are used to define entities within the simulation. In this case, our defined classes represent upstream nodes. These are true python classes. As such, they contain attributes and functions that help the situation run.
+* Classes are used to define entities within the simulation. In this case, our defined classes represent upstream nodes. These are true python classes and as such, they contain attributes and functions that help the simulation run.
 
 *Processes*
 * Processes are python functions that are executed throughout the simulation. These functions are the executables that move pallets from node to node. This includes all movements related to outbound pallets and inbound return pallets.
