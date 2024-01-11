@@ -137,7 +137,7 @@ All of these processes run concurrently every 7 days, moving pallets in and out 
 
 Within these processes is logic that tracks pallet need at each location and determines whether weekly pallet demand can be covered by the pallet return process or if the location must source pallets from a supplier to cover their demand. 
 
-These return processes are run every 7 days, offset from outbound processes by 4 days (i.e if the outbound processes run on day 21, return processes are run on day 25). The return process check the pallets avaialable to return buckets to see how much of each location's pallet need can be covered through the pallet return process.
+These return processes are run every 7 days, offset from outbound processes by 4 days (i.e if the outbound processes run on day 21, return processes are run on day 25). The return processes check the pallets available to return buckets to see how much of each location's pallet need can be covered through the pallet return process.
 * **IMPORTANT NOTE:** This specific model has been tuned with the following parameters
   * Mexico will ALWAYS source their weekly demand from suppliers. These pallets will eventually become part of the pallet return program for US Plant's use.
   * Pallets that are sent from EMs & Repack are NOT eligible for the pallet return program
