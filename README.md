@@ -101,7 +101,7 @@ The pallet simulation uses six main features of the SimPy framework: Environmnet
 *Timeouts*
 * Timeouts are python generator functions that delay the simulation for a specified period of time. In the pallet simulation model, we use timeouts to simulate pallet in transit times, holding times etc. Timeouts DO NOT stop the entire simulation from running, but they hault the process in which they are defined for the specified period of time.
 
-**Process:**
+**Process:** <br>
 The SimPy framework uses two methods to move pallets throughout the network via interacting with the upstream node's container objects. These methods are *put* and *get*.
 
 A *get* method takes a specified number of pallets out of a container, while a *put* method puts a specified amount of pallets into a container.
