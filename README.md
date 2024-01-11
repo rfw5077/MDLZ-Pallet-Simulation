@@ -216,7 +216,7 @@ Step 5) run the simulation
 
 
 ## Data
-All input data for the production model was sourced from the project sponsor. Historical data was used to provide estimates for 2024 throughput. This data can be found in the file below:
+All input data for the production model was sourced from the project sponsor. Historical data was used to provide estimates for 2024 pallet throughput at each node in the simulation. This data can be found in the file below:
 
 Pallet Simulation Data.xlsx
 * Directional yearly pallet throughput for each node in the simulation
@@ -225,3 +225,28 @@ Pallet Simulation Data.xlsx
 * Costs associated with each leg of the pallet return process
 * Pallet damage/loss rates by turn
 * Truck fill capacity
+
+## Code Structure
+All code for this project is written and run in a single jupyter notebook file: *pallet_sim_final - Weekly Testing - FINAL.ipynb*
+
+**Code Sections**
+*Imports*
+* Python package imports necessary for model to run
+
+*Inputs*
+* Section dedicated to providing flexible model parameters described above.
+
+*Class Definition*
+* Section for defining all upstream nodes in the simulation with relevant parameters/functions.
+
+*Processes*
+* Section for defining all necessary processes needed for the simulation to run properly.
+
+*Simulation Set Up & Run*
+* Section that instantiates all classes and necessary parameters, and then runs the simulation inside of the defined environment.
+
+*Output Files*
+* Final section that rolls everything up into three separate dataframes and outputs them to csv files:
+  * sim_output file - this file has daily pallet level information for the entire length of the simulation and tracks pallet movement throughout.
+  * sim_cost file - this file tracks cost of returning pallets back upstream along with all initial pallet buys and buys from supplier.
+  * injection file - this file tracks pallet injection necessities at each location over the entire simulation.
