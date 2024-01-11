@@ -79,9 +79,9 @@ The simulation runs out 3 years, and tracks daily information for each upstream 
 
 
 ## Simulation Technical Details
-The SimPy framework has many nuances not detailed in this section. Please reference the docs above for clarification.
-
 **DISCLAIMER:** This model scales all pallet numbers to thousands (i.e 200 pallets = 200,000 pallets, 1.5 pallets = 1,500 pallets)
+
+The SimPy framework has many nuances not detailed in this section. Please reference the docs above for clarification.
 
 The pallet simulation uses six main features of the SimPy framework: Environmnets, Classes, Processes, Resources, Containers & Timeouts.
 
