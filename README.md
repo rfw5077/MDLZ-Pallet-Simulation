@@ -90,7 +90,8 @@ The pallet simulation uses six main features of the SimPy framework: Environmnet
 * Classes are used to define entities within the simulation. In this case, our defined classes represent upstream nodes. These are true python classes and as such, they contain attributes and functions that help the simulation run.
 
 *Processes*
-* Processes are python functions that are executed throughout the simulation. These functions are the executables that move pallets from node to node. This includes all movements related to outbound pallets and inbound return pallets.
+* Processes are python generator functions that are executed throughout the simulation. These generator functions are the executables that move pallets from node to node. This includes all movements related to outbound pallets and inbound return pallets.
+  * **IMPORTANT NOTE:** Python Generator objects use the *yield* statement to control their flow. These are much different than general python functions. Before making any modifications to processes, make sure you read the python docs for generators: https://docs.python.org/3/c-api/gen.html
 
 *Resources*
 * Resources are variables defined within our classes that allow the simulation to interact with the class' attributes. Once a resource is requested, processes run to give or take pallets out of a respective node's class based on the processes that are defined.
