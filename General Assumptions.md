@@ -6,6 +6,10 @@
 * Pallet demand and throughput is calculated on a weekly basis.
   * This is calculated by taking the yearly forecasted demand for each location and dividing it evenly by 52 operational weeks.
 
+#### New Pallet Purchases
+* Each location in the simulation buys new pallets to cover their weekly demand, unless some/all of their weekly demand is covered by the pallet return program.
+* Excluding Salinas locations, ALL locations buy stringer pallets to cover any unmet demand at the start of each week.
+
 #### Transportation Lanes
 * Mondelez White Wood Block pallets are ONLY bought in Salinas, MX locations.
 * Mondelez White Wood Block pallets are ONLY returned from DSD locations.
