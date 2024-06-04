@@ -9,6 +9,7 @@
   * Repack - All repack locations
   * RDC - All RDC locations
   * DSD - All 46 DSD branch locations
+  * Customers - All Non-DSD customer locations
   * Richmond Bakery - Individual location
   * Chicago Bakery - Individual location
   * Portland Bakery - Individual location
