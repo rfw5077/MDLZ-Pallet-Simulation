@@ -2,6 +2,10 @@
 
 ## Simulation Assumptions/Definitions
 
+#### Pallet Demand
+* Pallet demand and throughput is calculated on a weekly basis.
+* This is calculated by taking the yearly forecasted demand for each location and dividing it evenly by 52 operational weeks.
+
 #### Transportation Lanes
 * Mondelez White Wood Block pallets are ONLY bought in Salinas, MX locations.
 * Mondelez White Wood Block pallets are ONLY returned from DSD locations.
@@ -21,7 +25,7 @@
 * Plant lead times and holding times are uniformly random for each batch of sent pallets between the intervals described below. 
 
 #### Truck Capacity
-* One truck can hold up to a maximum of 500 pallets to return
+* One truck can hold up to a maximum of 500 pallets to return.
 
 #### CHEP
 * Chep pallet demand is not considered in this simulation in any capacity.
