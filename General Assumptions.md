@@ -2,6 +2,18 @@
 
 ## Simulation Assumptions/Definitions
 
+#### Locations
+* Most locations are grouped into buckets for simplicity. Each bucket represents multiple Locations in terms of outbound demand etc. The buckets are as follows:
+  * Salinas - All Salinas, MX locations
+  * EMs - All External Manufacturer locations
+  * Repack - All repack locations
+  * RDC - All RDC locations
+  * DSD - All 46 DSD branch locations
+  * Richmond Bakery - Individual location
+  * Chicago Bakery - Individual location
+  * Portland Bakery - Individual location
+  * Naperville Bakery - Individual location
+ 
 #### Pallet Demand
 * Pallet demand and throughput is calculated on a weekly basis.
   * This is calculated by taking the yearly forecasted demand for each location and dividing it evenly by 52 operational weeks.
