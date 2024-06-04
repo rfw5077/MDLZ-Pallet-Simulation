@@ -21,6 +21,7 @@
 
 #### Turns
 * One "turn" for a pallet occurs when the pallet reaches the DSD bucket and becomes available to return. The next turn starts when it is returned upstream through the pallet return program.
+* Once a pallet has reached the end of its last turn defined by the turn parameter, it is treated as 100% loss.
 
 #### Pallet Loss to Customers
 * Any pallets sent directly to customers or repack are treated as a 100% loss. There is no expectation of return from these locations.
