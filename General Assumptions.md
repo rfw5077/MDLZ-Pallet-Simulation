@@ -1,5 +1,31 @@
 # MDLZ Pallet Simulation - General Assumptions
 
+## Simulation Assumptions/Definitions
+
+#### Transportation Lanes
+* Mondelez White Wood Block pallets are ONLY bought in Salinas, MX locations.
+* Mondelez White Wood Block pallets are ONLY returned from DSD locations.
+* Mondelez White Wood Block pallets can ONLY be returned to the following locations:
+  * Richmond
+  * Portland
+  * Chicago
+  * Naperville
+
+#### Turns
+* One "turn" for a pallet occurs when the pallet reaches the DSD bucket and becomes available to return. The next turn starts when it is returned upstream through the pallet return program.
+
+#### Pallet Loss to Customers
+* Any pallets sent directly to customers or repack are treated as a 100% loss. There is no expectation of return from these locations.
+
+#### Plant Lead Times & Holding Times
+* Plant lead times and holding times are uniformly random for each batch of sent pallets between the intervals described below. 
+
+#### Truck Capacity
+* One truck can hold up to a maximum of 500 pallets to return
+
+#### CHEP
+* Chep pallet demand is not considered in this simulation in any capacity.
+
 ## Data Assumptions
 The below parameters are all inputs that can be modified before each simulation run. The default values are as follows:
 
@@ -44,6 +70,11 @@ The below parameters are all inputs that can be modified before each simulation 
 * RDCs - 14-28 days
 * DSD - 7-10 days
 
+### RDC Distribution Percentages
+* RDC -> DSD - 54%
+* RDC -> Customers - 38%
+* RDC -> Repack - 8%
+
 #### Pallet Return Lead Times
 * DSD -> Salinas - 14-21 days
 * DSD -> Bakeries - 10-15 days
@@ -54,9 +85,24 @@ The below parameters are all inputs that can be modified before each simulation 
 * Richmond -> Portland -> Chicago -> Naperville
 
 #### Pallet Return Cost
+*One full truck = 500 pallets*
 * Bakeries - $2100/truck
 * HFS - $2100/truck
 * Salinas - $6000/truck
 
 #### Pallet Recyclability
 * 3-5 turns
+
+#### Pallet Loss Rate
+* 6%/Turn
+
+#### Pallet Damage Rates
+* Turn 1 - 4%
+* Turn 2 - 8%
+* Turn 3 - 16%
+* Turn 4 - 32%
+* Turn 5 - 64%
+
+
+
+
